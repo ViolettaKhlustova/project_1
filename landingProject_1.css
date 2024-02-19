@@ -47,7 +47,7 @@ a {
     justify-content: space-between;
     flex-direction: row;
     background-color: var(--black);
-    border-bottom: 2px dashed var(--gray1);
+
 }
 .header__logo {
     margin: 35px 21px;
@@ -107,6 +107,7 @@ a {
 }
 /*Summer Sale Container*/
 .summer-sale {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     margin: 21px;
@@ -131,6 +132,42 @@ a {
     -webkit-text-stroke: 2px var(--black);
     -webkit-text-fill-color: transparent;
 }
+.summer-sale__button {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 2px solid #000;
+    width: 175px;
+    /* height: 56px; */
+    background-color: transparent;
+}
+.button__text {
+    font: 500 18px var(--font-family);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 10px 39px;
+    color: var(--black);
+}
+.summer-sale__images {
+    display: flex;
+    justify-content: space-between;
+}
 .summer-sale__image-back {
-
+    width: 416px;
+    height: 623px;
+    margin: 90px 0;
+}
+.summer-sale__image-front {
+    width: 474px;
+    height: 709px;
+    margin: 47px 186px 0 -80px;
+}
+.summer-sale__squares {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-self: flex-end;
+    float: left;
+    margin: 22px 28px;
 }
