@@ -35,6 +35,24 @@ a {
     text-decoration: none;
     cursor: pointer;
 }
+/*Button*/
+.button {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 2px solid #000;
+    width: 175px;
+    /* height: 56px; */
+    background-color: transparent;
+}
+.button__text {
+    font: 500 18px var(--font-family);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 10px 39px;
+    color: var(--black);
+}
 /*Container*/
 .container {
     width: 100%;
@@ -132,23 +150,6 @@ a {
     -webkit-text-stroke: 2px var(--black);
     -webkit-text-fill-color: transparent;
 }
-.summer-sale__button {
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border: 2px solid #000;
-    width: 175px;
-    /* height: 56px; */
-    background-color: transparent;
-}
-.button__text {
-    font: 500 18px var(--font-family);
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    padding: 10px 39px;
-    color: var(--black);
-}
 .summer-sale__images {
     display: flex;
     justify-content: space-between;
@@ -170,4 +171,36 @@ a {
     align-self: flex-end;
     float: left;
     margin: 22px 28px;
+}
+.summer-sale__arrow {
+    display: flex;
+    margin: 22px 28px;
+    gap: 3px;
+    right: 0;
+    bottom: 0;
+}
+/*Chose Your Brand*/
+.chose-your-brand {
+    margin-top: 19px;
+}
+.chose-your-brand__title {
+    font: 400 24px var(--font-family);
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--black);
+    top: -12px;
+    position: relative;
+}
+.chose-your-brand__border {
+    position: absolute;
+    stroke-width: 2px;
+    stroke: var(--gray2-divider);
+    margin: 0 21px;
+}
+.chose-your-brand__img-brands {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 35px;
+    margin: -8px 21px;
 }
