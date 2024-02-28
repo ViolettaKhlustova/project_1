@@ -12,7 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
-	<header class="header">
+	<header class="header container">
 		<img class="header__logo" src="img/header_logo.png" alt="">
 		<div class="header__nav">
 			<a class="header__nav-text" id="header__nav-home">Home</a>
@@ -100,58 +100,68 @@
 	</div>
 	
 	<div class="three-cards container">
-		<div class="three-cards__choose-your-look">
+		<div class="three-cards__choose-look">
 			<img src="img/threeCards_1.png" alt="">
 			<div class="three-cards__text">
 				<p class="three-cards__title">choosе your look</p>
 				<p class="three-cards__subtitle">See our clothing collections</p>
-			</div>	
-			<button class="button">
-				<p class="button__text">see offers</p>
-			</button>
-		</div>
-		<div class="three-cards__brand-new-style">
-			<img src="img/threeCards_2.png" alt="">
-			<div class="three-cards__text">
+				<button class="button">
+					<p class="button__text">see offers</p>
+				</button>	
+			</div>		
+		</div>		
+		<div class="three-cards__new-style">
+			<img class="three-cards_2" src="img/threeCards_2.png" alt="">
+			<div class="three-cards__text-new-style">
 				<p class="three-cards__title">brand new style</p>
 				<p class="three-cards__subtitle">Popular clothing brands</p>
+				<button class="button">
+					<p class="button__text">see offers</p>
+				</button>
 			</div>	
-			<button class="button">
-				<p class="button__text">see offers</p>
-			</button>
-		</div>
+		</div>	
 		<div class="three-cards__up-to">
-			<img src="img/threeCards_3.png" alt="">
-			<div class="three-cards__text">
+			<img class="three-cards_3" src="img/threeCards_3.png" alt="">
+			<div class="three-cards__text-up-to">
 				<p class="three-cards__title-big">Up to	40% off</p>
 				<p class="three-cards__subtitle">Special offers and great deals</p>
+				<button class="up-to__button">
+					<p class="button__text">Shop now</p>
+				</button>	
 			</div>
-			<button class="button">
-				<p class="button__text">Shop now</p>
-			</button>	
-		</div>					
+			
+		</div>	
 	</div>	
 	
 	<div class="shop-some-wear container">
 		<div class="shop-some-wear__categories">
-            <div class="shop-some-wear__categories-item">
-            <input class="categories-item__box" type="checkbox" name="name">
-            <label class="categories-item__box-text">Ставку ПРР</label>
-            </div>    
-            <div class="shop-some-wear__categories-item">
-            <input class="categories-item__box" type="checkbox" name="name">
-            <label class="categories-item__box-text">Срок технологического накопления груза</label>
-            </div>     
-            <div class="shop-some-wear__categories-item">
-            <input class="categories-item__box" type="checkbox" name="name">
-            <label class="categories-item__box-text">Ставку хранения груза сверх срока технологического накопления</label>
-            </div>    
-            <div class="shop-some-wear__categories-item">
-            <input class="categories-item__box" type="checkbox" name="name">
-            <label class="categories-item__box-text">Возможность приёма и перевалки груза в указанные сроки</label>
-            </div>    
-        </div> 
-		
+			<p class="shop-some-wear__title">Shop Some Wear:</p>
+            <div class="shop-some-wear__item">
+			<input class="checkbox" type="checkbox" name="name">
+			<label class="item__box-text">Best sellers</label>
+			</div>    
+			<div class="shop-some-wear__item">
+			<input class="checkbox" type="checkbox" name="name">
+			<label class="item__box-text">NEW Arivals</label>
+			</div>     
+			<div class="shop-some-wear__item">
+			<input class="checkbox" type="checkbox" name="name">
+				<label class="item__box-text">TOP women</label>
+			</div>    
+			<div class="shop-some-wear__item">
+			<input class="checkbox" type="checkbox" name="name">
+				<label class="item__box-text">Collection: Summer</label>
+			</div>  
+			<div class="shop-some-wear__item">
+			<input class="checkbox" type="checkbox" name="name">
+			<label class="item__box-text">Collection: spring</label>
+			</div> 
+			<div class="shop-some-wear__item">
+			<input class="checkbox" type="checkbox" name="name">
+			<label class="item__box-text">TREnding</label>
+			</div>   
+        </div> 	
+		<div class="dresses__flex">
 		<div class="shop-some-wear__dresses">
 			<div class="item">
 				<img src="img/dress_1.png" alt="">
@@ -175,11 +185,13 @@
 				<div class="dresses__item-discount">
 					<p class="dresses__item-discount-text">-30%</p>
 				</div>
-				<img src="img/dress_4.png" alt="">
+				<img class="item__img" src="img/dress_4.png" alt="">
 				<p class="item__text-gray">top women</p>
 				<p class="item__text">Angels malu zip jeans slim black used</p>
-				<p class="item__price">139,00 EUR</p>
-				<p class="item__pricecross">119,00 EUR</p>
+				<span class="item__text-span">
+				<p class="item__price-accent">139,00 EUR</p>
+				<p class="item__pricethrough">119,00 EUR</p>
+				</span>
 			</div>	
 			<div class="item">
 				<img src="img/dress_5.png" alt="">
@@ -191,11 +203,13 @@
 				<div class="dresses__item-discount">
 					<p class="dresses__item-discount-text">-30%</p>
 				</div>
-				<img src="img/dress_6.png" alt="">
+				<img class="item__img" src="img/dress_6.png" alt="">
 				<p class="item__text-gray">top women</p>
 				<p class="item__text">Angels malu zip jeans slim black used</p>
-				<p class="item__price">139,00 EUR</p>
-				<p class="item__pricecross">119,00 EUR</p>
+				<span class="item__text-span">
+				<p class="item__price-accent">139,00 EUR</p>
+				<p class="item__pricethrough">119,00 EUR</p>
+				</span>
 			</div>	
 			<div class="item">
 				<img src="img/dress_7.png" alt="">
@@ -208,12 +222,17 @@
 				<p class="item__text-gray">top women</p>
 				<p class="item__text">Angels malu zip jeans slim black used</p>
 				<p class="item__price">139,00 EUR</p>
-			</div>	
-			<button class="dresses__button">
-				<p class="dresses__button-text">Load more</p>
-			</button>	
+			</div>
 		</div>
+		<button class="dresses__button">
+			<p class="dresses__button-text">Load more</p>
+			</button>
+			</div>
+		</div>
+		
 	</div>	
+		
+		
 	
 	<div class="shopping container">
 			<div class="border">
