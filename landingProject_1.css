@@ -1,6 +1,7 @@
 :root {
     --black: #000000;
     --black2: #3F3F3F; 
+    --black3: #131313; 
     --white: #ffffff;
     --accent: #EB5757;
     --light-blue-hover: #F0F2F2;
@@ -42,9 +43,9 @@ a {
     flex-direction: row;
     align-items: center;
     border: 2px solid #000;
-    width: 175px;
-    /* height: 56px; */
+    width: 180px;
     background-color: transparent;
+    margin-top: 50px
 }
 .button__text {
     font: 500 18px var(--font-family);
@@ -56,7 +57,6 @@ a {
 /*Container*/
 .container {
     width: 100%;
-    max-width: 1920px;
     margin: 0 auto;
 }
 /*Header*/
@@ -65,7 +65,6 @@ a {
     justify-content: space-between;
     flex-direction: row;
     background-color: var(--black);
-
 }
 .header__logo {
     margin: 35px 21px;
@@ -151,18 +150,17 @@ a {
     -webkit-text-fill-color: transparent;
 }
 .summer-sale__images {
+    width: 804px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 .summer-sale__image-back {
     width: 416px;
-    height: 623px;
     margin: 90px 0;
 }
 .summer-sale__image-front {
     width: 474px;
-    height: 709px;
-    margin: 47px 186px 0 -80px;
+    margin: 47px 40px 0 -80px;
 }
 .summer-sale__squares {
     position: absolute;
@@ -174,10 +172,9 @@ a {
 }
 .summer-sale__arrow {
     display: flex;
-    margin: 22px 28px;
+    margin: 0 41px;
     gap: 3px;
-    right: 0;
-    bottom: 0;
+    align-self: flex-end;
 }
 /*Chose Your Brand*/
 .chose-your-brand {
@@ -203,4 +200,220 @@ a {
     justify-content: space-between;
     gap: 35px;
     margin: -8px 21px;
+}
+/*Three cards container*/
+.three-cards {
+    display: grid;
+    max-width: 1878px;
+    margin: 70px 21px 30px 21px;
+    gap: 30px;
+}
+.three-cards__text {
+    margin: 83px 64px;
+}
+.three-cards__title {
+    max-width: 221px;
+    font: 600 48px var(--font-family);
+    text-transform: uppercase;
+    color: var(--black);
+}
+.three-cards__subtitle {
+    margin-top: 7px;
+    font: 300 22px var(--third-family);
+    color: var(--black);
+}
+/*Brand Choose Your Look*/
+.three-cards__choose-look {
+    display: flex;
+    max-width: 924px;
+    height: 434px;
+    background-color: var(--gradient-light-rose);
+}
+/*Brand New Style*/
+.three-cards__new-style {
+    display: flex;
+    width: 924px;
+    background-color: gray;
+    background: linear-gradient(90deg, #f7e0d5 0%, #f3dcd2 83.85%, 
+    rgba(243, 220, 210, 0.14) 100%);
+}
+.three-cards__text-new-style {
+    margin: 115px 15px 115px 94px;
+    position: absolute;
+}
+/*Brand New Style Image*/
+.three-cards_2 {
+    position: relative;
+    margin-left: auto;
+    width: 557px;
+    height: 434px;
+}
+/*Up to 40% off*/
+.three-cards__up-to {
+    display: flex;
+    position: relative;
+    width: 925px;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+/*Image Up to 40% off*/
+.three-cards_3 {                        
+    position: absolute;
+    z-index: -1;
+    width: 925px;
+    height: 898px;
+}
+.three-cards__text-up-to {
+    width: 357px;
+    height: 380px;
+    margin: 430px 0 103px 83px;
+}
+.three-cards__title-big {
+    font: 600 96px var(--font-family);
+    text-transform: uppercase;
+    color: var(--black3);
+}
+.up-to__button {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 2px solid #000;
+    width: 180px;
+    background-color: transparent;
+    margin-top: 50px
+}
+.button__text {
+    font: 500 18px var(--font-family);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 10px 39px;
+    color: var(--black);
+}
+
+/*Shop Some Wear*/
+.shop-some-wear {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 21px 0 21px;
+}
+.shop-some-wear__title {
+    font: 400 24px var(--font-family);
+    color: var(--black);
+    margin-bottom: 30px;
+}
+.shop-some-wear__categories {
+    display: flex;
+    width: 20%;
+    gap: 20px;
+    flex-direction: column;
+    border-right: 1px solid var(--gray2-divider);
+}
+.shop-some-wear__item {
+    display: flex;
+    gap: 9px;
+}
+.checkbox {
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    border: 1px solid var(--gray3);
+    outline: none;
+    transition: background-color 0.3s ease-in-out;
+}
+.checkbox:checked::before {
+    content: '\2714'; 
+    display: flex;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    line-height: 10px;
+}
+.checkbox:checked {
+    background-color: var(--black);
+}
+.item__box-text {
+    font: 400 14px var(--second-family);
+    text-transform: uppercase;
+    color: var(--black2);
+}
+.shop-some-wear__dresses {
+    display: grid;
+    width: 90%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 26px;
+    margin: 0 46px 0 29.5px;
+}
+.item {
+    display: flex;
+    flex-direction: column;
+}
+.item__image {
+    position: relative;
+}
+.item__text-gray {
+    font: 600 12px var(--font-family);
+    text-transform: uppercase;
+    color: var(--gray3);
+}
+.item__text {
+    font: 300 18px var(--font-family);
+    color: var(--black);
+}
+.item__text-span {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+.item__price {
+    font: 500 22px var(--font-family);
+    text-transform: uppercase;
+    color: var(--black);
+}
+.item__price-accent {
+    font: 500 22px var(--font-family);
+    text-transform: uppercase;
+    color: var(--accent);
+}
+.item__pricethrough {
+    font: 400 14px var(--font-family);
+    text-transform: uppercase;
+    color: var(--gray1);
+    text-decoration: line-through;
+    margin-top: 10px;
+}
+.dresses__item-discount {
+    position: absolute;
+    display: flex;
+    background: var(--black);
+    width: 40px;
+    margin-top: 15px;
+}
+.dresses__item-discount-text {
+    font: 400 14px var(--font-family);
+    text-align: center;
+    color: var(--white);
+    padding: 3px 4px;
+}
+.dresses__button {
+    display: flex;
+    background: transparent;
+    border: 2px solid var(--gray1);
+    padding: 20px 35px;
+    width: 140px;
+    margin: 63px 686px;
+}
+.dresses__button-text {
+    font: 500 14px var(--font-family);
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--gray1);
+}
+/*Shopping container*/
+.shopping {
+    display: flex;
+    margin: 30px 21px;
 }
