@@ -188,6 +188,11 @@ a {
 .chose-your-brand {
   margin-top: 19px;
 }
+@media (max-width: 320px) {
+  .chose-your-brand {
+    margin-top: 12px;
+  }
+}
 .chose-your-brand__title {
   font: 400 24px var(--font-family);
   text-transform: uppercase;
@@ -196,11 +201,21 @@ a {
   top: -12px;
   position: relative;
 }
+@media (max-width: 320px) {
+  .chose-your-brand__title {
+    display: none;
+  }
+}
 .chose-your-brand__border {
   position: absolute;
   stroke-width: 2px;
   stroke: var(--gray2-divider);
   margin: 0 21px;
+}
+@media (max-width: 320px) {
+  .chose-your-brand__border {
+    display: none;
+  }
 }
 .chose-your-brand__img-brands {
   display: flex;
@@ -208,6 +223,25 @@ a {
   justify-content: space-between;
   gap: 35px;
   margin: -8px 21px;
+}
+.brand__img-last {
+  display: none;
+}
+@media (max-width: 320px) {
+  .chose-your-brand__img-brands {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    margin: 14px;
+    gap: 14px;
+  }
+  .brand__img,
+  .brand__img-last {
+    display: flex;
+    border: 2px solid #c4c4c4;
+    width: 139px;
+    height: 70px;
+  }
 }
 /*Three cards container*/
 .three-cards {
