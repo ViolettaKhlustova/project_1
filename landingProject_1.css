@@ -530,11 +530,15 @@ a {
   text-align: center;
   color: var(--gray1);
 }
+.dresses__button-subtext {
+  display: none;
+}
 @media (max-width: 320px) {
   .dresses__button-text {
     display: none;
   }
   .dresses__button-subtext {
+    display: flex;
     font: 500 12px var(--font-family);
     letter-spacing: 0.04em;
     text-transform: uppercase;
