@@ -237,7 +237,6 @@ a {
 .three-cards__choose-look {
   display: flex;
   max-width: 924px;
-  height: 434px;
   background-color: var(--gradient-light-rose);
 }
 /*Brand New Style*/
@@ -268,6 +267,7 @@ a {
   display: flex;
   position: relative;
   width: 925px;
+  height: 560px;
   grid-column-start: 2;
   grid-column-end: 2;
   grid-row-start: 1;
@@ -277,8 +277,6 @@ a {
 .three-cards_3 {
   position: absolute;
   z-index: -1;
-  width: 925px;
-  height: 898px;
 }
 .three-cards__text-up-to {
   width: 357px;
@@ -314,10 +312,20 @@ a {
   justify-content: space-between;
   margin: 30px 21px 0 21px;
 }
+@media (max-width: 320px) {
+  .shop-some-wear {
+    margin: 15px 14px;
+  }
+}
 .shop-some-wear__title {
   font: 400 24px var(--font-family);
   color: var(--black);
   margin-bottom: 30px;
+}
+@media (max-width: 320px) {
+  .shop-some-wear__title {
+    display: none;
+  }
 }
 .shop-some-wear__categories {
   display: flex;
@@ -326,9 +334,19 @@ a {
   flex-direction: column;
   border-right: 1px solid var(--gray2-divider);
 }
+@media (max-width: 320px) {
+  .shop-some-wear__categories {
+    display: none;
+  }
+}
 .shop-some-wear__item {
   display: flex;
   gap: 9px;
+}
+@media (max-width: 320px) {
+  .shop-some-wear__item {
+    display: none;
+  }
 }
 .checkbox {
   appearance: none;
@@ -354,6 +372,9 @@ a {
   text-transform: uppercase;
   color: var(--black2);
 }
+.dresses-flex__title {
+  display: none;
+}
 .shop-some-wear__dresses {
   display: grid;
   width: 90%;
@@ -362,9 +383,40 @@ a {
   gap: 26px;
   margin: 0 46px 0 29.5px;
 }
+@media (max-width: 320px) {
+  .dresses__flex {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 1185px;
+  }
+  .shop-some-wear__dresses {
+    margin: 16px 4px;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 18px 14px;
+  }
+}
+.dresses-flex__title {
+  align-items: center;
+  height: 22px;
+  display: flex;
+  font: 400 18px / 3.77778 var(--font-family);
+  color: var(--black);
+}
 .item {
   display: flex;
   flex-direction: column;
+}
+@media (max-width: 320px) {
+  .item {
+    width: 139px;
+    height: 260px;
+  }
 }
 .item__image {
   position: relative;
@@ -374,9 +426,19 @@ a {
   text-transform: uppercase;
   color: var(--gray3);
 }
+@media (max-width: 320px) {
+  .item__text-gray {
+    font: 600 10px var(--font-family);
+  }
+}
 .item__text {
   font: 300 18px var(--font-family);
   color: var(--black);
+}
+@media (max-width: 320px) {
+  .item__text {
+    font: 300 12px var(--font-family);
+  }
 }
 .item__text-span {
   display: flex;
@@ -388,10 +450,20 @@ a {
   text-transform: uppercase;
   color: var(--black);
 }
+@media (max-width: 320px) {
+  .item__price {
+    font: 500 14px var(--font-family);
+  }
+}
 .item__price-accent {
   font: 500 22px var(--font-family);
   text-transform: uppercase;
   color: var(--accent);
+}
+@media (max-width: 320px) {
+  .item__price-accent {
+    font: 500 14px var(--font-family);
+  }
 }
 .item__pricethrough {
   font: 400 14px var(--font-family);
@@ -400,6 +472,11 @@ a {
   text-decoration: line-through;
   margin-top: 10px;
 }
+@media (max-width: 320px) {
+  .item__pricethrough {
+    font: 400 8px var(--font-family);
+  }
+}
 .dresses__item-discount {
   position: absolute;
   display: flex;
@@ -407,11 +484,26 @@ a {
   width: 40px;
   margin-top: 15px;
 }
+@media (max-width: 320px) {
+  .dresses__item-discount {
+    width: 33px;
+    height: 17px;
+    margin-top: 10px;
+  }
+  .item-discount__adaptive {
+    display: none;
+  }
+}
 .dresses__item-discount-text {
   font: 400 14px var(--font-family);
   text-align: center;
   color: var(--white);
-  padding: 3px 4px;
+  padding: 0 3px;
+}
+@media (max-width: 320px) {
+  .dresses__item-discount-text {
+    font: 400 12px var(--font-family);
+  }
 }
 .dresses__button {
   display: flex;
@@ -421,12 +513,37 @@ a {
   width: 140px;
   margin: 63px 686px;
 }
+@media (max-width: 320px) {
+  .dresses__button {
+    position: absolute;
+    bottom: 0;
+    width: 292px;
+    height: 35px;
+    margin: 0 auto;
+    padding: 7px 119px;
+    border: 2px solid var(--gray2-divider);
+  }
+}
 .dresses__button-text {
   font: 500 14px var(--font-family);
   text-transform: uppercase;
   text-align: center;
   color: var(--gray1);
 }
+@media (max-width: 320px) {
+  .dresses__button-text {
+    display: none;
+  }
+  .dresses__button-subtext {
+    font: 500 12px var(--font-family);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--black2);
+  }
+}
+
+/*Mobile*/
 @media (max-width: 320px) {
   /*Header*/
   .header {
@@ -570,7 +687,7 @@ a {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    margin: 14px;
+    margin: 0 14px;
     gap: 14px;
   }
   .brand__img,
@@ -600,13 +717,13 @@ a {
   /*Three cards Choose your look*/
   .three-cards__choose-look {
     display: flex;
-    width: 305px;
     height: 137px;
     background-color: var(--gradient-light-rose);
+    margin: 0 20px 0 0;
   }
   .three-cards__img-1 {
     width: 142px;
-    height: 137px;
+    object-fit: cover;
   }
   .button__three-cards {
     display: flex;
@@ -625,27 +742,28 @@ a {
   /*Three cards New style*/
   .three-cards__new-style {
     order: 3;
-    width: 305px;
-    height: 136px;
+    width: 299px;
   }
   .three-cards__text-new-style {
     order: 3;
     margin: 26px 0px 27px 31px;
   }
   .three-cards_2 {
+    object-fit: cover;
     width: 173px;
     height: 136px;
   }
   /*Three cards Up to*/
   .three-cards__up-to {
     order: 2;
-    width: 305px;
-    height: 284px;
+    height: 100%;
+    width: calc(100% - 20px);
+    margin-right: 20px;
   }
   .three-cards_3 {
-    right: 0;
-    width: 305px;
-    height: 284px;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
   }
   .three-cards__text-up-to {
     margin: 127px 0 34px 27px;
