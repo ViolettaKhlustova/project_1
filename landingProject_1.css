@@ -114,15 +114,43 @@ a {
   text-transform: uppercase;
   align-self: flex-start;
 }
+/*Swiper*/
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+display: flex !important;
+justify-content: center;
+}
+.img {
+  width: 1150px;
+  height: 750px;
+}
+.swiper-pagination-bullet {
+  background-color: var(--black) !important;
+  width: 15px !important;
+  height: 15px !important;
+}
+.swiper-button-prev {
+  margin-left: 30px;
+}
+.swiper-button-next {
+  margin-right: 50px;
+}
 /*Summer Sale Container*/
 .summer-sale {
   width: 100%;
+  height: 800px;
   display: flex;
   justify-content: space-between;
   margin: 21px;
   background-color: linear (174deg, var(--white) 35.42%, var(--black) 100%);
-  background-image: url("img/headerBackground.png");
+  background-image: url("img/headerBackground.jpg");
   background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-width: 0;
 }
 .container__text {
   text-align: left;
@@ -171,19 +199,43 @@ a {
   margin: 47px 40px 0 -80px;
 }
 .summer-sale__squares {
-  position: absolute;
   display: flex;
   flex-direction: row;
   align-self: flex-end;
   float: left;
   margin: 22px 28px;
+  width: 150px;
+  height: 22px;
+}
+.indicators {
+  position: absolute;
+  gap: 10px;
+}
+.indicator {
+  display: inline-block;
+  justify-content: left;
+  width: 19px;
+  height: 19px;
+  background-color: var(--gray1);
+}
+.active {
+  width: 21px;
+  height: 21px;
+  background-color: var(--black);
+  border-color: var(--black);
+  cursor: pointer;
 }
 .summer-sale__arrow {
-  display: flex;
-  margin: 0 41px;
-  gap: 3px;
-  align-self: flex-end;
+  display: flex !important;
+  margin: 0 41px !important;
+  gap: 3px !important;
+  align-self: flex-end !important;
 }
+.prev, .next {
+  color: var(--white) !important;
+  background-color: var(--black);
+}
+
 /*Chose Your Brand*/
 .chose-your-brand {
   margin-top: 19px;
@@ -312,20 +364,10 @@ a {
   justify-content: space-between;
   margin: 30px 21px 0 21px;
 }
-@media (max-width: 320px) {
-  .shop-some-wear {
-    margin: 15px 14px;
-  }
-}
 .shop-some-wear__title {
   font: 400 24px var(--font-family);
   color: var(--black);
   margin-bottom: 30px;
-}
-@media (max-width: 320px) {
-  .shop-some-wear__title {
-    display: none;
-  }
 }
 .shop-some-wear__categories {
   display: flex;
@@ -334,19 +376,9 @@ a {
   flex-direction: column;
   border-right: 1px solid var(--gray2-divider);
 }
-@media (max-width: 320px) {
-  .shop-some-wear__categories {
-    display: none;
-  }
-}
 .shop-some-wear__item {
   display: flex;
   gap: 9px;
-}
-@media (max-width: 320px) {
-  .shop-some-wear__item {
-    display: none;
-  }
 }
 .checkbox {
   appearance: none;
@@ -383,40 +415,9 @@ a {
   gap: 26px;
   margin: 0 46px 0 29.5px;
 }
-@media (max-width: 320px) {
-  .dresses__flex {
-    display: inline-block;
-    position: relative;
-    width: 100%;
-    height: 1185px;
-  }
-  .shop-some-wear__dresses {
-    margin: 16px 4px;
-    justify-content: center;
-    position: absolute;
-    left: 0;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    gap: 18px 14px;
-  }
-}
-.dresses-flex__title {
-  align-items: center;
-  height: 22px;
-  display: flex;
-  font: 400 18px / 3.77778 var(--font-family);
-  color: var(--black);
-}
 .item {
   display: flex;
   flex-direction: column;
-}
-@media (max-width: 320px) {
-  .item {
-    width: 139px;
-    height: 260px;
-  }
 }
 .item__image {
   position: relative;
@@ -426,19 +427,9 @@ a {
   text-transform: uppercase;
   color: var(--gray3);
 }
-@media (max-width: 320px) {
-  .item__text-gray {
-    font: 600 10px var(--font-family);
-  }
-}
 .item__text {
   font: 300 18px var(--font-family);
   color: var(--black);
-}
-@media (max-width: 320px) {
-  .item__text {
-    font: 300 12px var(--font-family);
-  }
 }
 .item__text-span {
   display: flex;
@@ -450,20 +441,10 @@ a {
   text-transform: uppercase;
   color: var(--black);
 }
-@media (max-width: 320px) {
-  .item__price {
-    font: 500 14px var(--font-family);
-  }
-}
 .item__price-accent {
   font: 500 22px var(--font-family);
   text-transform: uppercase;
   color: var(--accent);
-}
-@media (max-width: 320px) {
-  .item__price-accent {
-    font: 500 14px var(--font-family);
-  }
 }
 .item__pricethrough {
   font: 400 14px var(--font-family);
@@ -472,11 +453,6 @@ a {
   text-decoration: line-through;
   margin-top: 10px;
 }
-@media (max-width: 320px) {
-  .item__pricethrough {
-    font: 400 8px var(--font-family);
-  }
-}
 .dresses__item-discount {
   position: absolute;
   display: flex;
@@ -484,26 +460,11 @@ a {
   width: 40px;
   margin-top: 15px;
 }
-@media (max-width: 320px) {
-  .dresses__item-discount {
-    width: 33px;
-    height: 17px;
-    margin-top: 10px;
-  }
-  .item-discount__adaptive {
-    display: none;
-  }
-}
 .dresses__item-discount-text {
   font: 400 14px var(--font-family);
   text-align: center;
   color: var(--white);
   padding: 0 3px;
-}
-@media (max-width: 320px) {
-  .dresses__item-discount-text {
-    font: 400 12px var(--font-family);
-  }
 }
 .dresses__button {
   display: flex;
@@ -513,17 +474,6 @@ a {
   width: 140px;
   margin: 63px 686px;
 }
-@media (max-width: 320px) {
-  .dresses__button {
-    position: absolute;
-    bottom: 0;
-    width: 292px;
-    height: 35px;
-    margin: 0 auto;
-    padding: 7px 119px;
-    border: 2px solid var(--gray2-divider);
-  }
-}
 .dresses__button-text {
   font: 500 14px var(--font-family);
   text-transform: uppercase;
@@ -532,19 +482,6 @@ a {
 }
 .dresses__button-subtext {
   display: none;
-}
-@media (max-width: 320px) {
-  .dresses__button-text {
-    display: none;
-  }
-  .dresses__button-subtext {
-    display: flex;
-    font: 500 12px var(--font-family);
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    text-align: center;
-    color: var(--black2);
-  }
 }
 
 /*Mobile*/
@@ -776,5 +713,91 @@ a {
   }
   .three-cards__title-big {
     font: 600 26px var(--font-family);
+  }
+  .shop-some-wear {
+    margin: 15px 14px;
+  }
+  .shop-some-wear__title {
+    display: none;
+  }
+  .shop-some-wear__categories {
+    display: none;
+  }
+  .shop-some-wear__item {
+    display: none;
+  }
+  .dresses__flex {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 1185px;
+  }
+  .dresses-flex__title {
+    display: flex;
+    align-items: center;
+    height: 22px;
+    display: flex;
+    font: 400 18px / 3.77778 var(--font-family);
+    color: var(--black);
+  }
+  .shop-some-wear__dresses {
+    margin: 16px 4px;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 18px 14px;
+  }
+  .item {
+    width: 139px;
+    height: 260px;
+  }
+  .item__text-gray {
+    font: 600 10px var(--font-family);
+  }
+  .item__text {
+    font: 300 12px var(--font-family);
+  }
+  .item__price {
+    font: 500 14px var(--font-family);
+  }
+  .item__price-accent {
+    font: 500 14px var(--font-family);
+  }
+  .item__pricethrough {
+    font: 400 8px var(--font-family);
+  }
+  .dresses__item-discount {
+    width: 33px;
+    height: 17px;
+    margin-top: 10px;
+  }
+  .item-discount__adaptive {
+    display: none;
+  }
+  .dresses__item-discount-text {
+    font: 400 12px var(--font-family);
+  }
+  .dresses__button {
+    position: absolute;
+    bottom: 0;
+    width: 292px;
+    height: 35px;
+    margin: 0 auto;
+    padding: 7px 119px;
+    border: 2px solid var(--gray2-divider);
+  }
+  .dresses__button-text {
+    display: none;
+  }
+  .dresses__button-subtext {
+    display: flex;
+    font: 500 12px var(--font-family);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--black2);
   }
 }
