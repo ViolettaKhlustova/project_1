@@ -1,116 +1,18 @@
 <template>
   <div class="item">
-    <Radio></Radio>
-    <label class="item__text" name="label">osfa
-    </label>
-  </div>
-  <div class="item">
-    <Radio></Radio>
-    <label class="item__text" name="label">osfa
-    </label>
-  </div>
-  <div class="item">
-    <Radio></Radio>
-    <label class="item__text" name="label">osfa
-    </label>
-  </div>
-  <div class="item">
-    <Radio></Radio>
-    <label class="item__text" name="label">osfa
-    </label>
-  </div>
-  <div class="item">
-    <Radio></Radio>
-    <label class="item__text" name="label">osfa
-    </label>
-  </div>
-  <div class="item">
-    <Radio></Radio>
-    <label class="item__text" name="label">osfa
-    </label>
-  </div>
-  <div class="item">
-    <Radio></Radio>
-    <label class="item__text" name="label">osfa
-    </label>
-  </div>
-  <div class="item">
-    <Radio></Radio>
-    <label class="item__text" name="label">osfa
-    </label>
-  </div>
-  <div class="item">
-    <Radio></Radio>
-    <label class="item__text" name="label">osfa
-    </label>
-  </div>
-  <div class="item">
-    <Radio></Radio>
-    <label class="item__text" name="label">osfa
-    </label>
-  </div>
-  <div class="item">
-    <Radio></Radio>
-    <label class="item__text" name="label">osfa
-    </label>
-  </div>
-  <div class="item">
-    <Radio></Radio>
-    <label class="item__text" name="label">osfa
-    </label>
-  </div>
-  <div class="item">
-    <Radio></Radio>
-    <label class="item__text" name="label">osfa
-    </label>
-  </div>
-  <div class="item">
-    <Radio></Radio>
-    <label class="item__text" name="label">osfa
-    </label>
-  </div>
-  <div class="item">
-    <Radio></Radio>
-    <label class="item__text" name="label">osfa
-    </label>
-  </div>
-  <div class="item">
-    <Radio></Radio>
-    <label class="item__text" name="label">osfa
-    </label>
-  </div>
-  <div class="item">
-    <Radio></Radio>
-    <label class="item__text" name="label">osfa
-    </label>
-  </div>
-  <div class="item">
-    <Radio></Radio>
-    <label class="item__text" name="label">osfa
-    </label>
-  </div>
-  <div class="item">
-    <Radio></Radio>
-    <label class="item__text" name="label">osfa
-    </label>
-  </div>
-  <div class="item">
-    <Radio></Radio>
-    <label class="item__text" name="label">osfa
-    </label>
-  </div>
-  <div class="item">
-    <Radio></Radio>
-    <label class="item__text" name="label">osfa
+    <SizeRadio></SizeRadio>
+    <label class="item__text">
+      <slot/>
     </label>
   </div>
 </template>
 <style scoped>
 .item {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 46px;
 }
 .item__text {
   color: #828282;
@@ -123,9 +25,6 @@
   margin: 15px;
 }
 </style>
-
-
-
-<script setup lang="ts">
-import Radio from "@/Radio.vue";
+<script setup>
+import SizeRadio from "./SizeRadio.vue";
 </script>

@@ -6,8 +6,7 @@
     </label>
   </div>
 </template>
-<script setup lang="ts">
-import Radio from "./Radio.vue";
+<script setup>
 import CheckBox from "./CheckBox.vue";
 </script>
 <style scoped>
@@ -22,4 +21,4 @@ import CheckBox from "./CheckBox.vue";
   font-size: 14px;
   text-align: left;
 }
-</style>/
+</style>
