@@ -4,7 +4,7 @@
   <p class="title">Size (Inches)</p>
     <a class="border"></a>
     </span>
-    <div class="size-items">
+    <div class="items">
       <SizeItem v-for="size of sizes">{{size}}</SizeItem>
     </div>
   </div>
@@ -33,7 +33,7 @@
   color: #000000;
   font-weight: normal;
 }
-.size-items {
+.items {
   margin: 10px 120px 0 0;
   display: grid;
   grid-template-columns: repeat(5, 50px);

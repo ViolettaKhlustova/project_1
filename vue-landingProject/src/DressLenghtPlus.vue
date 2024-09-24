@@ -1,10 +1,9 @@
 <template>
   <div class="dress-length">
     <span class="border-title">
-    <p class="title">dress lenght</p>
+  <p class="title">Dress length</p>
     <a class="border"></a>
     </span>
-    <CheckBoxItem v-for="lengthDress of lengthDresses">{{lengthDress}}</CheckBoxItem>
   </div>
 </template>
 
@@ -24,10 +23,9 @@
   gap: 205px;
 }
 .border {
-  width: 12px;
-  border-bottom: 2px solid #3f3f3f;
-  margin-bottom: 55px;
-
+    width: 12px;
+    border-bottom: 2px solid #3f3f3f;
+    margin-bottom: 55px;
 }
 .title {
   font-family: Oswald, sans-serif;
@@ -38,15 +36,5 @@
   text-transform: capitalize;
 }
 </style>
-
 <script setup>
-import { ref } from "vue"
-import CheckBoxItem from "./CheckBoxItem.vue";
-const lengthDresses = ref([
-  'short',
-  'knee lenght',
-  'hight low',
-  'long',
-  'midi',
-])
 </script>

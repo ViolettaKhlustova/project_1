@@ -1,15 +1,11 @@
 <template>
-  <div class="goods">
     <div class="goods-item">
-      <img class="goods__img" src="vueImg/dress_1.png">
+      <img class="goods__img">
       <p class="goods__text">top women</p>
       <p class="goods__text-name">Angels malu zip jeans slim black used</p>
       <p class="goods__text-price">139,00 EUR</p>
     </div>
-  </div>
 </template>
-
-
 <style scoped>
 .goods {
   display: grid;
