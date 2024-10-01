@@ -17,6 +17,12 @@
       href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:wght@300;400&display=swap"
       rel="stylesheet"
     />
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
+    <script type="text/javascript" src="landingProject_1.js" defer></script>
   </head>
 
   <body>
@@ -131,90 +137,163 @@
     </header>
     <div class="page">
       <div class="summer-sale container">
-        <div class="container__text">
-          <p class="container__title">
-            SUMMER SALE GEt
-            <span class="summer-sale__subtitle">30% OFF</span> On all dress.
-          </p>
-          <button class="button">
-            <p class="button__text">Shop now</p>
-          </button>
+        <div class="swiper container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide slide">
+              <img class="img" src="sliderImg/1.png">
+            </div>
+            <div class="swiper-slide">
+              <img class="img" src="sliderImg/2.png">
+            </div>
+            <div class="swiper-slide">
+              <img class="img" src="sliderImg/3.png">
+            </div>
+            <div class="swiper-slide">
+              <img class="img" src="sliderImg/4.png">
+            </div>
+            <div class="swiper-slide">
+              <img class="img" src="sliderImg/5.png">
+            </div>
+          </div>
+          <div class="swiper-button-prev prev">
+            <svg
+                    class="arrow__left"
+                    width="50"
+                    height="50"
+                    viewBox="0 0 50 50"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect width="50" height="50" fill="black" fill-opacity="0.9" />
+              <path
+                      d="M28.0703 18L20.9995 25.0708L28.0703 32.1417"
+                      stroke="white"
+                      stroke-width="2"
+              />
+            </svg>
+          </div>
+          <div class="swiper-button-next next">
+            <svg
+                    class="arrow__right"
+                    width="50"
+                    height="50"
+                    viewBox="0 0 50 50"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                      x="50"
+                      y="50"
+                      width="50"
+                      height="50"
+                      transform="rotate(-180 50 50)"
+                      fill="black"
+                      fill-opacity="0.9"
+              />
+              <path
+                      d="M21.9297 32L29.0005 24.9292L21.9297 17.8583"
+                      stroke="white"
+                      stroke-width="2"
+              />
+            </svg>
+          </div>
+          <div class="swiper-pagination">
+            <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+          </div>
         </div>
-        <div class="summer-sale__images">
-          <img
-            class="summer-sale__image-back"
-            src="img/headerImgBack.png"
-            alt="headerImgBack.png"
-          />
-          <img
-            class="summer-sale__image-front"
-            src="img/headerImgFront.png"
-            alt="headerImgFront.png"
-          />
-        </div>
-        <div class="summer-sale__squares">
-          <svg
-            width="100"
-            height="22"
-            viewBox="0 0 100 22"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect x="0.5" y="2.5" width="17" height="17" stroke="#828282" />
-            <rect x="56.5" y="2.5" width="17" height="17" stroke="#828282" />
-            <rect x="82.5" y="2.5" width="17" height="17" stroke="#828282" />
-            <rect
-              x="26.5"
-              y="0.5"
-              width="21"
-              height="21"
-              fill="black"
-              stroke="black"
-            />
-          </svg>
-        </div>
-        <span class="summer-sale__arrow">
-          <svg
-            class="arrow__left"
-            width="50"
-            height="50"
-            viewBox="0 0 50 50"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect width="50" height="50" fill="black" fill-opacity="0.9" />
-            <path
-              d="M28.0703 18L20.9995 25.0708L28.0703 32.1417"
-              stroke="white"
-              stroke-width="2"
-            />
-          </svg>
-          <svg
-            class="arrow__right"
-            width="50"
-            height="50"
-            viewBox="0 0 50 50"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect
-              x="50"
-              y="50"
-              width="50"
-              height="50"
-              transform="rotate(-180 50 50)"
-              fill="black"
-              fill-opacity="0.9"
-            />
-            <path
-              d="M21.9297 32L29.0005 24.9292L21.9297 17.8583"
-              stroke="white"
-              stroke-width="2"
-            />
-          </svg>
-        </span>
-      </div>
+<!--        <div class="container__text">-->
+<!--          <p class="container__title">-->
+<!--            SUMMER SALE GEt-->
+<!--            <span class="summer-sale__subtitle">30% OFF</span> On all dress.-->
+<!--          </p>-->
+<!--          <button class="button">-->
+<!--            <p class="button__text">Shop now</p>-->
+<!--          </button>-->
+<!--        </div>-->
+<!--        <div class="summer-sale__images">-->
+<!--          <img-->
+<!--            class="summer-sale__image-back"-->
+<!--            src="img/headerImgBack.png"-->
+<!--            alt="headerImgBack.png"-->
+<!--          />-->
+<!--          <img-->
+<!--            class="summer-sale__image-front"-->
+<!--            src="img/headerImgFront.png"-->
+<!--            alt="headerImgFront.png"-->
+<!--          />-->
+<!--        </div>-->
+<!--        <div class="summer-sale__squares indicators">-->
+<!--          <span class="indicator active"></span>-->
+<!--          <span class="indicator"></span>-->
+<!--          <span class="indicator"></span>-->
+<!--          <span class="indicator"></span>-->
+<!--          <span class="indicator"></span>-->
 
+<!--          <svg-->
+<!--            width="100"-->
+<!--            height="22"-->
+<!--            viewBox="0 0 100 22"-->
+<!--            fill="none"-->
+<!--            xmlns="http://www.w3.org/2000/svg"-->
+<!--          >-->
+<!--            <rect x="0.5" y="2.5" width="17" height="17" stroke="#828282" />-->
+<!--            <rect x="56.5" y="2.5" width="17" height="17" stroke="#828282" />-->
+<!--            <rect x="82.5" y="2.5" width="17" height="17" stroke="#828282" />-->
+<!--            <rect-->
+<!--              x="26.5"-->
+<!--              y="0.5"-->
+<!--              width="21"-->
+<!--              height="21"-->
+<!--              fill="black"-->
+<!--              stroke="black"-->
+<!--            />-->
+<!--          </svg>-->
+<!--        </div>-->
+<!--        <span class="summer-sale__arrow">-->
+<!--          <div class="prev">-->
+<!--            <svg-->
+<!--            class="arrow__left"-->
+<!--            width="50"-->
+<!--            height="50"-->
+<!--            viewBox="0 0 50 50"-->
+<!--            fill="none"-->
+<!--            xmlns="http://www.w3.org/2000/svg"-->
+<!--          >-->
+<!--            <rect width="50" height="50" fill="black" fill-opacity="0.9" />-->
+<!--            <path-->
+<!--              d="M28.0703 18L20.9995 25.0708L28.0703 32.1417"-->
+<!--              stroke="white"-->
+<!--              stroke-width="2"-->
+<!--            />-->
+<!--          </svg>-->
+<!--          </div>-->
+<!--          <div class="next">-->
+<!--            <svg-->
+<!--            class="arrow__right"-->
+<!--            width="50"-->
+<!--            height="50"-->
+<!--            viewBox="0 0 50 50"-->
+<!--            fill="none"-->
+<!--            xmlns="http://www.w3.org/2000/svg"-->
+<!--          >-->
+<!--            <rect-->
+<!--              x="50"-->
+<!--              y="50"-->
+<!--              width="50"-->
+<!--              height="50"-->
+<!--              transform="rotate(-180 50 50)"-->
+<!--              fill="black"-->
+<!--              fill-opacity="0.9"-->
+<!--            />-->
+<!--            <path-->
+<!--              d="M21.9297 32L29.0005 24.9292L21.9297 17.8583"-->
+<!--              stroke="white"-->
+<!--              stroke-width="2"-->
+<!--            />-->
+<!--          </svg>-->
+<!--          </div>-->
+<!--        </span>-->
+      </div>
       <div class="chose-your-brand container">
         <div class="chose-your-brand__border">
           <svg
