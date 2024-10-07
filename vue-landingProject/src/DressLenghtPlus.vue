@@ -10,7 +10,6 @@
 
 <style scoped>
 .dress-length {
-  margin: 0 39px 30px 21px ;
   display: flex;
   width: 95%;
   gap: 20px;
@@ -25,12 +24,11 @@
 .border {
     width: 12px;
     border-bottom: 2px solid #3f3f3f;
-    margin-bottom: 55px;
+    margin-bottom: 40px;
 }
 .title {
   font-family: Oswald, sans-serif;
   font-size: 24px;
-  line-height: 68px;
   color: #000000;
   font-weight: normal;
   text-transform: capitalize;

@@ -5,7 +5,7 @@
         <input class="radio"
                type="radio"
                name="name"
-               :style="{backgroundColor: props.color}">
+               :style="{backgroundColor: props.colorGood}">
       </label>
     </div>
   </div>
@@ -35,6 +35,6 @@
 }
 </style>
 <script setup>
-const props = defineProps(["color"]);
+const props = defineProps(["colorGood"]);
 
 </script>

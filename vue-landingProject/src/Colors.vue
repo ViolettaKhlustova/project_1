@@ -9,12 +9,17 @@
     </div>
   </div>
 </template>
+
+<script setup>
+import ColorsRadioItem from "./ColorsRadioItem.vue";
+const props = defineProps(["colors"])
+</script>
+
 <style scoped>
 .colors {
   display: flex;
   width: 95%;
   flex-direction: column;
-  margin: 0 39px 30px 21px ;
 }
 .border-title {
   display: flex;
@@ -24,7 +29,7 @@
 .border {
   width: 12px;
   border-bottom: 2px solid #3f3f3f;
-  margin-bottom: 55px;
+  margin-bottom: 40px;
 }
 .title {
   font-family: Oswald, sans-serif;
@@ -40,9 +45,3 @@
   gap: 20px;
 }
 </style>
-<script setup>
-import ColorsRadioItem from "./ColorsRadioItem.vue";
-const props = defineProps(["colors"])
-
-
-</script>
