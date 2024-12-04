@@ -27,18 +27,6 @@
   display: flex;
   position: absolute;
 }
-.item__missing::before {
-  content: "";
-  width: 1px;
-  height: 62px;
-  background-color: #c4c4c4;
-  transform-origin: top right;
-}
-.item__missing::before {
-  top: 0;
-  right: 0;
-  transform: rotate(-45deg);
-}
 </style>/
 <script setup>
 </script>

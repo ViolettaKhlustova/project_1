@@ -2,44 +2,18 @@
   <div class="brand">
     <span class="border-title">
   <p class="title">Brand</p>
-    <a class="border"></a>
+      <AppCategoriesBtn @click="show = !show"/>
     </span>
+    <transition>
+    <div class="items" v-if="show">
    <CheckBoxItem v-for="brand of brands">{{brand}}</CheckBoxItem>
+    </div>
+    </transition>
   </div>
 </template>
-
-
-<style scoped>
-.brand {
-  margin: 0 39px 30px 21px ;
-  display: flex;
-  width: 95%;
-  gap: 20px;
-  flex-direction: column;
-  border-right: 1px solid var(--gray2-divider);
-}
-.border-title {
-  display: flex;
-  flex-direction: row;
-  gap: 260px;
-}
-.border {
-  width: 12px;
-  border-bottom: 2px solid #3f3f3f;
-  margin-bottom: 55px;
-
-}
-.title {
-  font-family: Oswald, sans-serif;
-  font-size: 24px;
-  line-height: 68px;
-  color: #000000;
-  font-weight: normal;
-}
-</style>
-
 <script setup>
 import { ref } from "vue"
+import AppCategoriesBtn from "./AppCategoriesBtn.vue";
 import CheckBoxItem from "./CheckBoxItem.vue";
 const brands = ref([
   'State',
@@ -49,4 +23,34 @@ const brands = ref([
   'Cece',
   'Donna Ricco',
 ])
+const show = ref(false)
 </script>
+<style scoped>
+.brand, .items {
+  display: flex;
+  width: 95%;
+  gap: 20px;
+  flex-direction: column;
+  border-right: 1px solid var(--gray2-divider);
+}
+.border-title {
+  display: flex;
+  flex-direction: row;
+  gap: 263px;
+}
+.title {
+  font-family: Oswald, sans-serif;
+  font-size: 24px;
+  color: #000000;
+  font-weight: normal;
+}
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+</style>
+

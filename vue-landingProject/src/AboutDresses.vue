@@ -2,7 +2,7 @@
 <div class="about-dresses">
 <span class="border-title">
   <p class="title">about dresses</p>
-  <a class="border"></a>
+
 </span>
   <div class="about-dresses__text">
     <p>Every day we’re gonna be dropping the latest trends
@@ -24,17 +24,11 @@
   display: flex;
   width: 95%;
   flex-direction: column;
-  margin: 0 39px 30px 21px;
 }
 .border-title {
   display: flex;
   flex-direction: row;
   gap: 190px;
-}
-.border {
-  width: 12px;
-  border-bottom: 2px solid #3f3f3f;
-  margin-bottom: 40px;
 }
 .title {
   font-family: Oswald, sans-serif;

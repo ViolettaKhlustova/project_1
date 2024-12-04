@@ -2,16 +2,30 @@
   <div class="dress-length">
     <span class="border-title">
     <p class="title">dress lenght</p>
-    <a class="border"></a>
+      <AppCategoriesBtn @click="isOpen = !isOpen"/>
     </span>
+    <transition>
+    <div class="items" v-if="isOpen">
     <CheckBoxItem v-for="lengthDress of lengthDresses">{{lengthDress}}</CheckBoxItem>
+    </div>
+    </transition>
   </div>
 </template>
-
-
+<script setup>
+import { ref } from "vue"
+import CheckBoxItem from "./CheckBoxItem.vue";
+import AppCategoriesBtn from "./AppCategoriesBtn.vue";
+const lengthDresses = ref([
+  'short',
+  'knee lenght',
+  'hight low',
+  'long',
+  'midi',
+])
+const isOpen = ref(false);
+</script>
 <style scoped>
-.dress-length {
-  margin: 0 39px 30px 21px ;
+.dress-length, .items {
   display: flex;
   width: 95%;
   gap: 20px;
@@ -21,32 +35,22 @@
 .border-title {
   display: flex;
   flex-direction: row;
-  gap: 205px;
-}
-.border {
-  width: 12px;
-  border-bottom: 2px solid #3f3f3f;
-  margin-bottom: 55px;
-
+  gap: 202px;
 }
 .title {
   font-family: Oswald, sans-serif;
   font-size: 24px;
-  line-height: 68px;
   color: #000000;
   font-weight: normal;
   text-transform: capitalize;
 }
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
 </style>
 
-<script setup>
-import { ref } from "vue"
-import CheckBoxItem from "./CheckBoxItem.vue";
-const lengthDresses = ref([
-  'short',
-  'knee lenght',
-  'hight low',
-  'long',
-  'midi',
-])
-</script>

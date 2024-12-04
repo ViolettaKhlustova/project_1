@@ -2,49 +2,19 @@
   <div class="size">
     <span class="border-title">
   <p class="title">Size (Inches)</p>
-    <a class="border"></a>
+     <AppCategoriesBtn @click="isOpen = !isOpen"/>
     </span>
-    <div class="items">
+    <transition>
+    <div class="items" v-if="isOpen">
       <SizeItem v-for="size of sizes">{{size}}</SizeItem>
     </div>
+    </transition>
   </div>
 </template>
-<style scoped>
-.size {
-  display: flex;
-  width: 95%;
-  flex-direction: column;
-  margin: 0 39px 30px 21px ;
-}
-.border-title {
-  display: flex;
-  flex-direction: row;
-  gap: 200px;
-}
-.border {
-  width: 12px;
-  border-bottom: 2px solid #3f3f3f;
-  margin-bottom: 55px;
-}
-.title {
-  font-family: Oswald, sans-serif;
-  font-size: 24px;
-  line-height: 68px;
-  color: #000000;
-  font-weight: normal;
-}
-.items {
-  margin: 10px 120px 0 0;
-  display: grid;
-  grid-template-columns: repeat(5, 50px);
-  grid-template-rows: repeat(4, 50px);
-  gap: 10px;
-  justify-content: space-between;
-}
-</style>
 <script setup>
 import SizeItem from "./SizeItem.vue";
 import { ref } from "vue"
+import AppCategoriesBtn from "./AppCategoriesBtn.vue";
 const sizes = ref([
   'osfa',
   'W26',
@@ -67,4 +37,37 @@ const sizes = ref([
   'W50',
   'W52',
 ])
+const isOpen = ref(false)
 </script>
+<style scoped>
+.size {
+  display: flex;
+  flex-direction: column;
+}
+.border-title {
+  display: flex;
+  flex-direction: row;
+  gap: 205px;
+}
+.title {
+  font-family: Oswald, sans-serif;
+  font-size: 24px;
+  color: #000000;
+  font-weight: normal;
+}
+.items {
+  margin: 10px 80px 0 0;
+  display: grid;
+  grid-template-columns: repeat(5, 50px);
+  gap: 10px;
+  justify-content: space-between;
+}
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+</style>

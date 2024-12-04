@@ -1,20 +1,20 @@
 <template>
   <div class="item">
-      <label class="item-radio" :style="{border: modelValue === color ?
-      '2px solid black' : 'none'}">
+      <label class="item-radio" :style="{border: modelValue === colorGood ?
+      '2px solid black' : 'none'}"
+             v-for="colorGood in variant">
         <input class="radio"
                type="radio"
-               name="filter_colors"
-               :style="{backgroundColor: props.color}"
+               name="filter_color"
+               :style="{backgroundColor: colorGood}"
                @change="$emit('update:modelValue', $event.target.value)"
-               :value="color"/>
+               :value="variant.colorGood"
+               :key="colorGood" />
       </label>
   </div>
 </template>
 <script setup>
-import {ref} from "vue";
-const props = defineProps(["color", "modelValue"]);
-
+const props = defineProps(['modelValue', "variant", "good"]);
 </script>
 <style scoped>
 .item {

@@ -2,7 +2,7 @@
   <div class="dress-length">
     <span class="border-title">
   <p class="title">Dress length</p>
-    <a class="border"></a>
+    <AppCategoriesBtn/>
     </span>
   </div>
 </template>
@@ -10,31 +10,61 @@
 
 <style scoped>
 .dress-length {
-  margin: 0 39px 30px 21px ;
   display: flex;
   width: 95%;
+  max-width: 355px;
   gap: 20px;
   flex-direction: column;
   border-right: 1px solid var(--gray2-divider);
+  margin-bottom: 60px;
+  height: 22px;
 }
 .border-title {
   display: flex;
   flex-direction: row;
-  gap: 205px;
-}
-.border {
-    width: 12px;
-    border-bottom: 2px solid #3f3f3f;
-    margin-bottom: 55px;
+  gap: 202px;
 }
 .title {
   font-family: Oswald, sans-serif;
   font-size: 24px;
-  line-height: 68px;
   color: #000000;
   font-weight: normal;
   text-transform: capitalize;
 }
+.border {
+    display: none;
+    width: 12px;
+    border-bottom: 2px solid #3f3f3f;
+    margin-bottom: 40px;
+}
+.sign-plus {
+  width: 12px;
+  height: 12px;
+  position: relative;
+  margin: 35px 10px 24px 10px;
+}
+.sign-plus::before,
+.sign-plus::after {
+  content: '';
+  position: absolute;
+  background: #3F3F3F;
+}
+.sign-plus::before { /* Вертикальная линия */
+  width: 2px; /* ширина линии */
+  height: 100%; /* высота линии */
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+
+.sign-plus::after { /* Горизонтальная линия */
+  height: 2px; /* высота линии */
+  width: 100%; /* длина линии */
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
 </style>
 <script setup>
+import AppCategoriesBtn from "./AppCategoriesBtn.vue";
 </script>
