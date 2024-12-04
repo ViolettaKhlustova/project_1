@@ -1,24 +1,45 @@
 <template>
     <div class="goods-item">
       <img width="344px" height="450px" class="goods__img"
-       :src="good.image"/>
+      :src="currentVariant?.image"/>
       <div class="goods-item__text">
         <p class="goods__text">top women</p>
         <p class="goods__text-name">Angels malu zip jeans slim black used</p>
-        <p class="goods__text-price" :price="good.price">{{good.price}}</p>
+        <p class="goods__text-price">{{ currentVariant?.price }}</p>
       </div>
       <div class="goods-color">
-      <GoodsColorsRadioItem v-for="colorGood in good.colorGoods" :colorGood="colorGood"/>
+      <GoodsColorsRadioItem v-for="variant in good.variants"
+                            :variant="variant"
+                            v-model="checkedColor"/>
       </div>
     </div>
 </template>
-
 <script setup>
-import {ref} from "vue";
+import {computed, onMounted, onBeforeUnmount, ref} from "vue";
 import GoodsColorsRadioItem from "./GoodsColorsRadioItem.vue";
-const props = defineProps(["good"]);
-</script>
+const props = defineProps(['good', "goods"]);
+const checkedColor = ref("");
 
+const currentVariant = computed(() => {
+  return props.good.variants.find(variant => variant.colorGood === checkedColor.value);
+})
+const switchVariant = () => {
+  const currentIndex = props.good.variants.findIndex(variant => variant.colorGood === checkedColor.value);
+  const nextIndex = (currentIndex + 1) % props.good.variants.length;
+  checkedColor.value = props.good.variants[nextIndex].colorGood;
+};
+
+let intervalId;
+
+onMounted(() => {
+  intervalId = setInterval(switchVariant, 5000);
+});
+
+onBeforeUnmount(() => {
+  clearInterval(intervalId);
+});
+
+</script>
 <style scoped>
 .goods-item {
   display: flex;

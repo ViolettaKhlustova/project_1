@@ -2,6 +2,7 @@
 <div class="about-dresses">
 <span class="border-title">
   <p class="title">about dresses</p>
+
 </span>
   <div class="about-dresses__text">
     <p>Every day we’re gonna be dropping the latest trends

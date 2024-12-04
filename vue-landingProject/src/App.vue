@@ -5,8 +5,8 @@
       <Brand/>
       <Size/>
       <DressLenght/>
-      <Colors :colors="colors" />
-      <PriceRange/>
+      <Colors/>
+      <PriceRange />
       <DressLenghtPlus/>
       <AboutDresses/>
     </div>
@@ -25,22 +25,6 @@ import PriceRange from "./PriceRange.vue";
 import DressLenghtPlus from "./DressLenghtPlus.vue";
 import AboutDresses from "./AboutDresses.vue";
 import Goods from "./Goods.vue";
-import {ref} from "vue";
-const colors = ref([
-  "#292A2D",
-  "#F3ECE2",
-  "#24426A",
-  "#18574A",
-  "#666689",
-  '#C2BEB6',
-  "#AAABA7",
-  "#971E34",
-  "#CBA13E",
-  "#73513C",
-  "#DAB1B1",
-  "#2B9FA7",
-])
-
 </script>
 
 <style scoped>
@@ -61,7 +45,7 @@ const colors = ref([
 }
 .app-categories {
   display: flex;
-  width: 20%;
+  width: 23%;
   gap: 10px;
   flex-direction: column;
   border-right: 1px solid #C4C4C4;

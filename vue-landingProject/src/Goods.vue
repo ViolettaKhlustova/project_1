@@ -29,21 +29,103 @@
 import GoodsItem from "./GoodsItem.vue";
 import {ref} from "vue";
 const goods = ref([
-  {price: "139,00 EUR", colorGoods: ["#24426A", "#18574A", "#666689"], image: '/dress_1.png'},
-  {price: "235,00 EUR", colorGoods: ["#88ABCB", "#FACBCE", "#A75E5D"], image: '/dress_2.png'},
-  {price: "90,00 EUR", colorGoods: ["#C2BEB6", "#24426A", "#CBA13E"], image: '/dress_3.png'},
-  {price: "139,00 EUR", colorGoods: ["#24426A", "#F3ECE2", "#666689"], image: '/dress_4.png'},
-  {price: "235,00 EUR", colorGoods: ["#2B9FA7", "#971E34", "#666689"], image: '/dress_5.png'},
-  {price: "90,00 EUR", colorGoods: ["#666689", "#292A2D", "#F3ECE2"], image: '/dress_6.png'},
-  {price: "139,00 EUR", colorGoods: ["#88ABCB", "#FACBCE", "#A75E5D"], image: '/dress_7.png'},
-  {price: "235,00 EUR", colorGoods: ["#F3ECE2", "#292A2D", "#AAABA7"], image: '/dress_8.png'},
-  {price: "90,00 EUR", colorGoods: ["#24426A", "#18574A", "#666689"], image: '/dress_9.png'},
-  {price: "139,00 EUR", colorGoods: ["#88ABCB", "#FACBCE", "#A75E5D"], image: '/dress_10.png'},
-  {price: "235,00 EUR", colorGoods: ["#C2BEB6", "#24426A", "#CBA13E"], image: '/dress_11.png'},
-  {price: "90,00 EUR", colorGoods: ["#24426A", "#F3ECE2", "#666689"], image: '/dress_12.png'},
+  { id:1,
+    name: "dress1",
+    variants: [
+      {colorGood: "#24426A", price: "139,00 EUR", image:'/dress_1.png'},
+      {colorGood: "#18574A", price: "235,00 EUR", image:'/dress_2.png'},
+      {colorGood: "#666689", price: "90,00 EUR", image:'/dress_3.png'}
+    ]
+  },
+  { id:2,
+    name: "dress2",
+    variants: [
+      {colorGood: "#88ABCB", price: "235,00 EUR", image:'/dress_2.png'},
+      {colorGood: "#FACBCE", price: "90,00 EUR", image:'/dress_3.png'},
+      {colorGood: "#A75E5D", price: "139,00 EUR", image:'/dress_4.png'}
+    ]
+  },
+  { id:3,
+    name: "dress3",
+    variants: [
+      {colorGood: "#C2BEB6", price: "90,00 EUR", image:'/dress_3.png'},
+      {colorGood: "#24426A", price: "139,00 EUR", image:'/dress_4.png'},
+      {colorGood: "#CBA13E", price: "235,00 EUR", image:'/dress_5.png'}
+    ]
+  },
+  { id:4,
+    name: "dress4",
+    variants: [
+      {colorGood: "#24426A", price: "139,00 EUR", image:'/dress_4.png'},
+      {colorGood: "#F3ECE2", price: "235,00 EUR", image:'/dress_5.png'},
+      {colorGood: "#666689", price: "90,00 EUR", image:'/dress_6.png'}
+    ]
+  },
+  { id:5,
+    name: "dress5",
+    variants: [
+      {colorGood: "#2B9FA7", price: "235,00 EUR", image:'/dress_5.png'},
+      {colorGood: "#971E34", price: "90,00 EUR", image:'/dress_6.png'},
+      {colorGood: "#666689", price: "90,00 EUR", image:'/dress_7.png'}
+    ]
+  },
+  { id:6,
+    name: "dress6",
+    variants: [
+      {colorGood: "#666689", price: "90,00 EUR", image:'/dress_6.png'},
+      {colorGood: "#292A2D", price: "139,00 EUR", image:'/dress_7.png'},
+      {colorGood: "#F3ECE2", price: "235,00 EUR", image:'/dress_8.png'}
+    ]
+  },
+  { id:7,
+    name: "dress7",
+    variants: [
+      {colorGood: "#88ABCB", price: "139,00 EUR", image:'/dress_7.png'},
+      {colorGood: "#FACBCE", price: "235,00 EUR", image:'/dress_8.png'},
+      {colorGood: "#A75E5D", price: "90,00 EUR", image:'/dress_9.png'}
+    ]
+  },
+  { id:8,
+    name: "dress8",
+    variants: [
+      {colorGood: "#F3ECE2", price: "235,00 EUR", image:'/dress_8.png'},
+      {colorGood: "#292A2D", price: "90,00 EUR", image:'/dress_9.png'},
+      {colorGood: "#AAABA7", price: "139,00 EUR", image:'/dress_10.png'}
+    ]
+  },
+  { id:9,
+    name: "dress9",
+    variants: [
+      {colorGood: "#24426A", price: "90,00 EUR", image:'/dress_9.png'},
+      {colorGood: "#18574A", price: "235,00 EUR", image:'/dress_10.png'},
+      {colorGood: "#666689", price: "90,00 EUR", image:'/dress_11.png'}
+    ]
+  },
+  { id:10,
+    name: "dress10",
+    variants: [
+      {colorGood: "#88ABCB", price: "139,00 EUR", image:'/dress_10.png'},
+      {colorGood: "#FACBCE", price: "235,00 EUR", image:'/dress_11.png'},
+      {colorGood: "#A75E5D", price: "90,00 EUR", image:'/dress_12.png'}
+    ]
+  },
+  { id:11,
+    name: "dress11",
+    variants: [
+      {colorGood: "#C2BEB6", price: "235,00 EUR", image:'/dress_11.png'},
+      {colorGood: "#24426A", price: "90,00 EUR", image:'/dress_12.png'},
+      {colorGood: "#CBA13E", price: "139,00 EUR", image:'/dress_1.png'}
+    ]
+  },
+  { id:12,
+    name: "dress12",
+    variants: [
+    {colorGood: "#24426A", price: "90,00 EUR", image:'/dress_12.png'},
+    {colorGood: "#F3ECE2", price: "139,00 EUR", image:'/dress_1.png'},
+    {colorGood: "#666689", price: "235,00 EUR", image:'/dress_2.png'}
+    ]
+  }
 ])
-
-
 </script>
 <style scoped>
 .goods-select {

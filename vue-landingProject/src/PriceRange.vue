@@ -2,23 +2,63 @@
 <div class="price-range">
 <span class="border-title">
   <p class="title">price range</p>
-    <a class="border"></a>
+ <AppCategoriesBtn @click="isOpen = !isOpen"/>
     </span>
-  <div class="price-range__slider">
-  <div class="price-range__slider-text">
-  <p class="text">0.00 EUR</p>
-  <p class="text">250.00 EUR</p>
-  </div>
-  <input id="right" class="styled-slider slider-progress" type="range" min="0.00" max="250.00" value="1.00">
-  <input id="left" type="range" min="0.00" max="250.00" value="0.00">
+  <transition>
+  <div class="items" v-if="isOpen">
+  <div class="wrapper">
+    <div class="values">
+    <span id="range1">
+      {{minValue}} EUR
+    </span>
+      <span> &dash;</span>
+      <span id="range2">
+      {{maxValue}} EUR
+    </span>
+    </div>
+    <div class="container" @mousedown="isMoving = true" @mouseup="isMoving=false"
+                           @touchstart="isMoving=true" @touchend="isMoving=false">
+      <input type="range" id="slider-1" min="0" max="250" :step="step" :value="minValue" @input="updateMin"/>
+      <input type="range" id="slider-2" min="0" max="250" :step="step" :value="maxValue" @input="updateMax"/>
+     <div class="slider-track" :class="{'changed-track': isMoving}"></div>
+      <div class="add-track" :style="computedFunc"></div>
+    </div>
   </div>
   <div class="price-range__btn">
     <button class="btn-text">Apply</button>
   </div>
+  </div>
+  </transition>
 </div>
 </template>
 <script setup>
-
+import {computed, ref} from "vue";
+import AppCategoriesBtn from "./AppCategoriesBtn.vue";
+const isOpen = ref(false);
+const isMoving = ref(false);
+const minValue = ref(50);
+const maxValue = ref(100);
+const step = ref(1);
+const computedFunc = computed(() => {
+    const min = (minValue.value / 250) * 100;
+    const max = (maxValue.value / 250) * 100;
+    return {
+      left: `${min}%`,
+      right: `100%`,
+      width: `${max - min}%`,
+      backgroundColor: "#000000",
+    }
+})
+const updateMin = (event) => {
+    if (Number(event.target.value) <= Number(maxValue.value) - 5) {
+      minValue.value = Number(event.target.value);
+    }
+  };
+ const updateMax = (event) => {
+    if (Number(event.target.value) >= Number(minValue.value) + 5) {
+      maxValue.value = Number(event.target.value);
+    }
+  };
 </script>
 <style scoped>
 .price-range {
@@ -31,11 +71,6 @@
   flex-direction: row;
   gap: 213px;
 }
-.border {
-  width: 12px;
-  border-bottom: 2px solid #3f3f3f;
-  margin-bottom: 40px;
-}
 .title {
   font-family: Oswald, sans-serif;
   font-size: 24px;
@@ -43,111 +78,135 @@
   font-weight: normal;
   text-transform: capitalize;
 }
-.price-range__slider {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+.wrapper {
   position: relative;
-
+  width: 95%;
+}
+.values {
+  background-color: #000000;
+  width: 35%;
+  position: relative;
+  margin: auto;
+  padding: 10px 5px;
+  border-radius: 5px;
+  text-align: center;
+  font-family: Roboto, sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: #ffffff;
+}
+.values:before {
+  content: "";
+  position: absolute;
+  height: 0;
+  width: 0;
+  border-top: 15px solid #000000;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  margin: auto;
+  bottom: -14px;
+  left: 0;
+  right: 0;
+}
+.container {
+  position: relative;
+  width: 100%;
+  height: 70px;
 }
 input[type="range"] {
-  position: absolute;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   width: 100%;
-}
-#right {
-  z-index: 1;
-  width: 335px;
-}
-#left {
-  z-index: 2;
-  width: 335px;
-}
-.price-range__slider-text {
-  display: flex;
-  gap: 205px;
-  font-family: Roboto, sans-serif;
-  font-size: 14px;
-}
-.styled-slider {
-  height: 2px;
-  -webkit-appearance: none;
-}
-.styled-slider {
-  height: 12px;
-  -webkit-appearance: none;
-}
-:root {
-  --max:320px;
-  --min:140px;
-  --value:5px;
-  --range: calc(var(--max) - var(--min));
-  --ratio: calc((var(--value) - var(--min)) / var(--range));
-  --sx: calc(0.5 * 6px + var(--ratio) * (100% - 6px));
-}
-/*progress support*/
-.styled-slider.slider-progress {
-  --range: calc(var(--max) - var(--min));
-  --ratio: calc((var(--value) - var(--min)) / var(--range));
-  --sx: calc(0.5 * 6px + var(--ratio) * (100% - 6px));
-}
-.styled-slider:focus {
   outline: none;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  background-color: transparent;
+  pointer-events: none;
 }
-/*webkit*/
-.styled-slider::-webkit-slider-thumb {
+.slider-track {
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  background-color: #BDBDBD;
+  z-index: -1;
+}
+.changed-track {
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  background-color: #000000;
+}
+.add-track {
+  height: 2px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 20%;
+  right: 40%;
+  background: #000000;
+}
+input[type=range]::-webkit-slider-runnable-track {
   -webkit-appearance: none;
-  width: 6px;
+  height: 0;
+  background-color: #BDBDBD;
+}
+input[type=range]::-moz-range-track {
+  -moz-appearance: none;
+  height: 2px;
+  background-color: #BDBDBD;
+}
+input[type=range]::-ms-track {
+  appearance: none;
+  height: 2px;
+  background-color: #BDBDBD;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
   height: 20px;
-  background: #000000;
-  margin-top: calc(2px * 0.5 - 20px * 0.5);
-}
-.styled-slider::-webkit-slider-runnable-track {
-  height: 2px;
-  background: #BDBDBD;
-}
-.styled-slider:hover::-webkit-slider-runnable-track {
-  background: #BDBDBD;
-}
-.styled-slider:active::-webkit-slider-runnable-track {
-  background: #000000;
-}
-.styled-slider.slider-progress::-webkit-slider-runnable-track {
-  background: linear-gradient(#BDBDBD,#BDBDBD) 100% no-repeat, #000000;
-}
-.styled-slider.slider-progress:hover::-webkit-slider-runnable-track {
-  background: linear-gradient(#000000,#000000) 100% no-repeat, #000000;
-}
-.styled-slider.slider-progress:active::-webkit-slider-runnable-track {
-  background: linear-gradient(#000000,#000000) 100% no-repeat, #000000;
-}
-/*ms*/
-.styled-slider::-ms-thumb {
   width: 6px;
+  background-color: #000000;
+  cursor: pointer;
+  margin-top: -5px;
+  pointer-events: auto;
+}
+input[type=range]::-moz-range-thumb {
+  -moz-appearance: none;
   height: 20px;
-  background: #000000;
-  box-sizing: border-box;
+  width: 6px;
+  background-color: #000000;
+  cursor: pointer;
+  pointer-events: auto;
 }
-.styled-slider::-ms-track {
-  height: 2px;
-  background: #BDBDBD;
-  box-sizing: border-box;
+input[type=range]::-ms-thumb {
+  appearance: none;
+  height: 20px;
+  width: 6px;
+  cursor: pointer;
+  background-color: #000000;
+  pointer-events: auto;
 }
-.styled-slider:hover::-ms-track {
-  background: #000000;
-}
-.styled-slider:active::-ms-track {
-  background: #000000;
-}
-.styled-slider.slider-progress::-ms-fill-lower {
-  height: 2px;
-  background: #000000;
-}
-.styled-slider.slider-progress:hover::-ms-fill-lower {
-  background: #000000;
-}
-.styled-slider.slider-progress:active::-ms-fill-lower {
-  background: #BDBDBD;
+input[type=range]:active::-webkit-slider-thumb {
+  background-color: #ffffff;
+  border: 2px solid #000000;
 }
 /*Button*/
 .price-range__btn {
@@ -167,5 +226,4 @@ input[type="range"] {
   text-transform: uppercase;
   color: #828282;
 }
-
 </style>

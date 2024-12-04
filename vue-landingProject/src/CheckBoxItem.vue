@@ -13,6 +13,7 @@ import CheckBox from "./CheckBox.vue";
 .item {
   display: flex;
   gap: 9px;
+  transition: opacity 0.5s;
 }
 .item__text {
   text-transform: uppercase;

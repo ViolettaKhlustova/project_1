@@ -1,29 +1,27 @@
 <template>
   <div class="item">
-    <div class="item-border">
-      <label class="item-radio">
+      <label class="item-radio" :style="{border: modelValue === colorGood ?
+      '2px solid black' : 'none'}"
+             v-for="colorGood in variant">
         <input class="radio"
                type="radio"
-               name="name"
-               :style="{backgroundColor: props.colorGood}">
+               name="filter_color"
+               :style="{backgroundColor: colorGood}"
+               @change="$emit('update:modelValue', $event.target.value)"
+               :value="variant.colorGood"
+               :key="colorGood" />
       </label>
-    </div>
   </div>
 </template>
+<script setup>
+const props = defineProps(['modelValue', "variant", "good"]);
+</script>
 <style scoped>
 .item {
   display: flex;
   width: 27px;
   height: 27px;
   gap: 3px;
-}
-.item-border {
-  border: 2px solid #000000;
-  background-color: transparent;
-  width: 26px;
-}
-.item-radio {
-  height: 17px;
 }
 .radio {
   display: flex;
@@ -34,7 +32,3 @@
   margin: 3px;
 }
 </style>
-<script setup>
-const props = defineProps(["colorGood"]);
-
-</script>

@@ -2,34 +2,50 @@
   <div class="colors">
     <span class="border-title">
   <p class="title">Color</p>
-    <a class="border"></a>
+      <AppCategoriesBtn @click="isOpen = !isOpen"/>
     </span>
-    <div class="items">
-      <ColorsRadioItem v-for="color in colors" :color="color"/>
+    <transition>
+    <div class="items" v-if="isOpen">
+      <ColorsRadioItem
+          v-for="color in colors"
+          :color="color"
+          v-model="selectedColor"/>
     </div>
+    </transition>
   </div>
 </template>
-
 <script setup>
 import ColorsRadioItem from "./ColorsRadioItem.vue";
-const props = defineProps(["colors"])
+import AppCategoriesBtn from "./AppCategoriesBtn.vue";
+import {ref} from "vue";
+const selectedColor = ref("")
+const props = defineProps(["colors", 'selectedColor']);
+const colors = ref([
+  "#292A2D",
+  "#F3ECE2",
+  "#24426A",
+  "#18574A",
+  "#666689",
+  '#C2BEB6',
+  "#AAABA7",
+  "#971E34",
+  "#CBA13E",
+  "#73513C",
+  "#DAB1B1",
+  "#2B9FA7",
+])
+const isOpen = ref(false);
 </script>
 
 <style scoped>
 .colors {
   display: flex;
-  width: 95%;
   flex-direction: column;
 }
 .border-title {
   display: flex;
   flex-direction: row;
   gap: 270px;
-}
-.border {
-  width: 12px;
-  border-bottom: 2px solid #3f3f3f;
-  margin-bottom: 40px;
 }
 .title {
   font-family: Oswald, sans-serif;
@@ -38,10 +54,17 @@ const props = defineProps(["colors"])
   font-weight: normal;
 }
 .items {
-  margin-right: 102px;
+  margin-right: 65px;
   display: grid;
   grid-template-columns: repeat(7, 27px);
-  grid-template-rows: repeat(2, 27px);
   gap: 20px;
+}
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
 </style>
