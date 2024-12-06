@@ -66,5 +66,5 @@
 }
 </style>
 <script setup>
-import AppCategoriesBtn from "./AppCategoriesBtn.vue";
+import AppCategoriesBtn from "../shared/BtnOpenList.vue";
 </script>

@@ -2,7 +2,7 @@
   <div class="size">
     <span class="border-title">
   <p class="title">Size (Inches)</p>
-     <AppCategoriesBtn @click="isOpen = !isOpen"/>
+     <BtnOpenList @click="isOpen = !isOpen"/>
     </span>
     <transition>
     <div class="items" v-if="isOpen">
@@ -14,7 +14,7 @@
 <script setup>
 import SizeItem from "./SizeItem.vue";
 import { ref } from "vue"
-import AppCategoriesBtn from "./AppCategoriesBtn.vue";
+import BtnOpenList from "../shared/BtnOpenList.vue";
 const sizes = ref([
   'osfa',
   'W26',

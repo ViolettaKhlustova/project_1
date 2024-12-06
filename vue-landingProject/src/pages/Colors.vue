@@ -2,7 +2,7 @@
   <div class="colors">
     <span class="border-title">
   <p class="title">Color</p>
-      <AppCategoriesBtn @click="isOpen = !isOpen"/>
+      <BtnOpenList @click="isOpen = !isOpen"/>
     </span>
     <transition>
     <div class="items" v-if="isOpen">
@@ -16,7 +16,7 @@
 </template>
 <script setup>
 import ColorsRadioItem from "./ColorsRadioItem.vue";
-import AppCategoriesBtn from "./AppCategoriesBtn.vue";
+import BtnOpenList from "../shared/BtnOpenList.vue";
 import {ref} from "vue";
 const selectedColor = ref("")
 const props = defineProps(["colors", 'selectedColor']);

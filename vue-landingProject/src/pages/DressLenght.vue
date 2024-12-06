@@ -2,7 +2,7 @@
   <div class="dress-length">
     <span class="border-title">
     <p class="title">dress lenght</p>
-      <AppCategoriesBtn @click="isOpen = !isOpen"/>
+      <BtnOpenList @click="isOpen = !isOpen"/>
     </span>
     <transition>
     <div class="items" v-if="isOpen">
@@ -13,8 +13,8 @@
 </template>
 <script setup>
 import { ref } from "vue"
-import CheckBoxItem from "./CheckBoxItem.vue";
-import AppCategoriesBtn from "./AppCategoriesBtn.vue";
+import CheckBoxItem from "../shared/CheckBoxItem.vue";
+import BtnOpenList from "../shared/BtnOpenList.vue";
 const lengthDresses = ref([
   'short',
   'knee lenght',
