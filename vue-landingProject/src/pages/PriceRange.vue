@@ -33,7 +33,7 @@
 </template>
 <script setup>
 import {computed, ref} from "vue";
-import AppCategoriesBtn from "./AppCategoriesBtn.vue";
+import AppCategoriesBtn from "../shared/BtnOpenList.vue";
 const isOpen = ref(false);
 const isMoving = ref(false);
 const minValue = ref(50);

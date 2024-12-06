@@ -7,7 +7,8 @@
                name="filter_colors"
                :style="{backgroundColor: props.color}"
                @change="$emit('update:modelValue', $event.target.value)"
-               :value="color"/>
+               :value="color"
+               :key="color" />
       </label>
   </div>
 </template>

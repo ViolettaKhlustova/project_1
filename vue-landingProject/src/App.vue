@@ -15,16 +15,15 @@
     </div>
   </div>
 </template>
-
 <script setup>
-import Brand from "./Brand.vue";
-import Size from "./Size.vue";
-import DressLenght from "./DressLenght.vue";
-import Colors from "./Colors.vue";
-import PriceRange from "./PriceRange.vue";
-import DressLenghtPlus from "./DressLenghtPlus.vue";
-import AboutDresses from "./AboutDresses.vue";
-import Goods from "./Goods.vue";
+import Brand from "./pages/Brand.vue";
+import Size from "./pages/Size.vue";
+import DressLenght from "./pages/DressLenght.vue";
+import Colors from "./pages/Colors.vue";
+import PriceRange from "./pages/PriceRange.vue";
+import DressLenghtPlus from "./pages/DressLenght2.vue";
+import AboutDresses from "./pages/AboutDresses.vue";
+import Goods from "./pages/Goods.vue";
 </script>
 
 <style scoped>

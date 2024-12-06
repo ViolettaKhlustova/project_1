@@ -2,7 +2,7 @@
   <div class="brand">
     <span class="border-title">
   <p class="title">Brand</p>
-      <AppCategoriesBtn @click="show = !show"/>
+      <BtnOpenList @click="show = !show"/>
     </span>
     <transition>
     <div class="items" v-if="show">
@@ -13,8 +13,8 @@
 </template>
 <script setup>
 import { ref } from "vue"
-import AppCategoriesBtn from "./AppCategoriesBtn.vue";
-import CheckBoxItem from "./CheckBoxItem.vue";
+import CheckBoxItem from "../shared/CheckBoxItem.vue";
+import BtnOpenList from "../shared/BtnOpenList.vue";
 const brands = ref([
   'State',
   'Cooper',

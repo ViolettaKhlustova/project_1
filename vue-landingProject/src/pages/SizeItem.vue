@@ -1,7 +1,16 @@
 <template>
-  <input class="radio item__missing" type="radio" name="name">
+  <div class="item">
+    <input class="radio" type="radio" name="name">
+    <label class="item__text">
+      <slot/>
+    </label>
+  </div>
 </template>
 <style scoped>
+.item {
+  width: 46px;
+  height: 46px;
+}
 .radio {
   display: flex;
   appearance: none;
@@ -23,10 +32,16 @@
   color: #000000;
   border: 2px solid #000000;
 }
-.item__missing {
-  display: flex;
+.item__text {
+  color: #828282;
+  font-family: Oswald, sans-serif;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase ;
+  border-color: #828282;
   position: absolute;
+  margin: 15px;
 }
-</style>/
+</style>
 <script setup>
 </script>
