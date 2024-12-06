@@ -1,9 +1,9 @@
 <template>
   <div class="item">
-    <input class="radio" type="radio" name="name">
     <label class="item__text">
       <slot/>
     </label>
+    <input class="radio" type="radio" name="name">
   </div>
 </template>
 <style scoped>
