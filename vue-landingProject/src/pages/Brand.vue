@@ -6,7 +6,7 @@
     </span>
     <transition>
     <div class="items" v-if="show">
-   <CheckBoxItem v-for="brand of brands">{{brand}}</CheckBoxItem>
+   <CheckBoxItem v-for="brand of brands" :key="brand">{{brand}}</CheckBoxItem>
     </div>
     </transition>
   </div>
